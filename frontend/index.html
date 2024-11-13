@@ -3,81 +3,78 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Nyandungu Visits</title>
-    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="styles/style.css" />
+    <title>Travel Website</title>
   </head>
   <body>
-    <header id="welcome">
-      <h1>Welcome to Nyandungu Eco-Park</h1>
+    <header>
+      <div class="logo">Traveler</div>
       <nav>
-        <a href="#about">About</a>
-        <a href="#visit">Visit Us</a>
-        <a href="#tours">Tours & Events</a>
-        <a href="#resources">Resources</a>
-        <a href="#contact">Contact Us</a>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#packages">Tour Packages</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
       </nav>
     </header>
 
-    <section id="slideshow">
-      <img
-        src="assets/images/park_view_1.jpg"
-        class="active"
-        alt="Nyandungu Park View"
-      />
-      <img
-        src="assets/images/park_view_2.jpg"
-        alt="Scenic View in Nyandungu Park"
-      />
-      <img
-        src="assets/images/park_view_3.jpg"
-        alt="Beautiful Lake in Nyandungu Park"
-      />
-    </section>
-
     <section id="about">
-      <h2>Discover the Heart of Nyandungu Eco-Park</h2>
-      <p>
-        Nyandungu Eco-Park is a serene escape in Kigali, showcasing Rwanda’s
-        dedication to environmental conservation.
-      </p>
-    </section>
-
-    <section id="visit">
-      <h2>Plan Your Visit</h2>
-      <p>Details on park hours, entrance fees, and visitor guidelines.</p>
-    </section>
-
-    <section id="tours">
-      <h2>Tours & Events</h2>
-      <p>
-        Explore eco-tour bookings and upcoming events at Nyandungu Eco-Park.
-      </p>
-    </section>
-
-    <section id="resources">
-      <h2>Educational Resources</h2>
-      <div class="collapsible-section">
-        <button class="collapsible">What is the Nyandungu Eco-Park?</button>
-        <div class="content">
-          <p>
-            Nyandungu Eco-Park is Rwanda's first restored wetland park,
-            fostering local biodiversity.
-          </p>
+      <h1>Our Travel Guides</h1>
+      <div class="guides">
+        <div class="guide">
+          <img src="images/nyandungu-entrance.jpg" alt="Guide Name" />
+          <h2>Guide Name</h2>
+          <p>Designation</p>
+        </div>
+        <div class="guide">
+          <img src="images/park_view_1.jpg" alt="Guide Name" />
+          <h2>Guide Name</h2>
+          <p>Designation</p>
+        </div>
+        <div class="guide">
+          <img src="images/park_view_2.jpg" alt="Guide Name" />
+          <h2>Guide Name</h2>
+          <p>Designation</p>
         </div>
       </div>
     </section>
 
-    <footer id="contact">
-      <h2>Contact Us</h2>
-      <form id="contactForm">
-        <input type="text" id="name" placeholder="Your Name" required />
-        <input type="email" id="email" placeholder="Your Email" required />
-        <textarea id="message" placeholder="Your Message" required></textarea>
-        <button type="submit">Submit</button>
+    <section id="services">
+      <h1>We Provide Best Tour Packages In Your Budget</h1>
+      <div class="offer">
+        <h2>30% OFF For Honeymoon</h2>
+        <p>Details about the offer</p>
+      </div>
+    </section>
+
+    <section id="booking">
+      <h2>Book Your Tour</h2>
+      <form id="bookingForm">
+        <label for="name">Your Name:</label>
+        <input type="text" id="name" required />
+
+        <label for="email">Your Email:</label>
+        <input type="email" id="email" required />
+
+        <label for="destination">Select a destination:</label>
+        <select id="destination" required>
+          <option value="">Choose...</option>
+          <option value="Beach">Beach</option>
+          <option value="Mountain">Mountain</option>
+          <option value="City">City</option>
+        </select>
+
+        <button type="submit">Sign Up Now</button>
       </form>
-      <div id="formMessage"></div>
+    </section>
+
+    <footer>
+      <p>Contact: info@example.com | Phone: +012 345 6789</p>
+      <p>&copy; 2024 Traveler. All Rights Reserved.</p>
     </footer>
 
-    <script src="assets/js/script.js"></script>
+    <script src="scripts/script.js"></script>
   </body>
 </html>

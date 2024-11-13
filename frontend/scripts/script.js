@@ -1,52 +1,24 @@
-// Smooth Scrolling for Anchor Links
-document.querySelectorAll('nav a').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
-        });
-    });
-});
+// Function to handle form submission
+function handleFormSubmit(event) {
+    event.preventDefault(); // Prevent the default form submission
 
-// Slideshow Functionality
-let slideIndex = 0;
-const slides = document.querySelectorAll('#slideshow img');
+    // Get form values
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const destination = document.getElementById('destination').value;
 
-function showSlides() {
-    slides.forEach((slide, index) => {
-        slide.classList.remove('active');
-        if (index === slideIndex) {
-            slide.classList.add('active');
-        }
-    });
-    slideIndex = (slideIndex + 1) % slides.length;
+    // Simple client-side validation
+    if (name && email && destination) {
+        alert(`Thank you, ${name}! Your request for ${destination} has been submitted.`);
+    } else {
+        alert('Please fill in all fields.');
+    }
 }
 
-setInterval(showSlides, 3000); // Change image every 3 seconds
-
-// Collapsible Section Functionality
-document.querySelectorAll('.collapsible').forEach(button => {
-    button.addEventListener('click', function() {
-        this.classList.toggle('active');
-        const content = this.nextElementSibling;
-        content.style.display = content.style.display === 'block' ? 'none' : 'block';
-    });
-});
-
-// Form Validation
-document.getElementById('contactForm').addEventListener('submit', function(e) {
-    e.preventDefault();
-    
-    const name = document.getElementById('name').value.trim();
-    const email = document.getElementById('email').value.trim();
-    const message = document.getElementById('message').value.trim();
-    const formMessage = document.getElementById('formMessage');
-
-    if (name && email && message) {
-        formMessage.textContent = "Thank you for your message!";
-        formMessage.style.color = "green";
-    } else {
-        formMessage.textContent = "Please fill out all fields.";
-        formMessage.style.color = "red";
+// Add event listener to the form
+document.addEventListener('DOMContentLoaded', function() {
+    const form = document.getElementById('bookingForm');
+    if (form) {
+        form.addEventListener('submit', handleFormSubmit);
     }
 });
