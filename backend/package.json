@@ -2,13 +2,14 @@
   "name": "nyandungu-visits",
   "version": "1.0.0",
   "main": "index.js",
+  "type": "module",
   "scripts": {
-  "start": "node index.js",
-  "dev": "nodemon index.js",
-  "lint": "eslint . --ext .js",
-  "format": "prettier --write .",
-  "test": "echo \"Error: no test specified\" && exit 1"
-},
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "lint": "eslint . --ext .js",
+    "format": "prettier --write .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
@@ -20,6 +21,7 @@
     "express-rate-limit": "^7.4.1",
     "helmet": "^8.0.0",
     "jsonwebtoken": "^9.0.2",
+    "morgan": "^1.10.0",
     "nodemailer": "^6.9.16",
     "pg": "^8.13.1"
   },
@@ -29,4 +31,3 @@
     "prettier": "^3.3.3"
   }
 }
-
