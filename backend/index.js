@@ -16,15 +16,17 @@ dotenv.config();
 const app = express();
 
 // Security middleware
-app.use(helmet({
-  contentSecurityPolicy: {
-    directives: {
-      defaultSrc: ["'self'"],
-      imgSrc: ["'self'", "img.com"],
-      scriptSrc: ["'self'", "'unsafe-inline'"],
+app.use(
+  helmet({
+    contentSecurityPolicy: {
+      directives: {
+        defaultSrc: ["'self'"],
+        imgSrc: ["'self'", "img.com"],
+        scriptSrc: ["'self'", "'unsafe-inline'"],
+      },
     },
-  },
-}));
+  })
+);
 app.use(cors());
 app.use(express.json());
 
@@ -62,8 +64,16 @@ const PORT = process.env.PORT || 3000;
 async function startServer() {
   try {
     await dbConnect();
-    app.listen(PORT, () => {
+    const server = app.listen(PORT, () => {
       console.log(`Server running on port ${PORT}`);
+    });
+
+    // Graceful shutdown
+    process.on('SIGTERM', () => {
+      console.log('SIGTERM received. Shutting down gracefully...');
+      server.close(() => {
+        console.log('Process terminated');
+      });
     });
   } catch (error) {
     console.error('Failed to start server:', error);
@@ -71,13 +81,6 @@ async function startServer() {
   }
 }
 
-// Graceful shutdown
-process.on('SIGTERM', () => {
-  console.log('SIGTERM received. Shutting down gracefully...');
-  app.close(() => {
-    console.log('Process terminated');
-  });
-});
-
 startServer();
+
 

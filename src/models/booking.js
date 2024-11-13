@@ -5,6 +5,11 @@ export const BookingModel = {
   async create(bookingData) {
     const { userId, date, timeSlot, groupSize, email, phone } = bookingData;
     
+    // Ensure group size is within allowed limits
+    if (groupSize > process.env.MAX_GROUP_SIZE) {
+      throw new Error(`Group size exceeds the maximum allowed of ${process.env.MAX_GROUP_SIZE}`);
+    }
+
     const query = `
       INSERT INTO bookings (user_id, date, time_slot, group_size, email, phone)
       VALUES ($1, $2, $3, $4, $5, $6)
@@ -14,7 +19,8 @@ export const BookingModel = {
     const result = await pool.query(query, [
       userId, date, timeSlot, groupSize, email, phone
     ]);
-    
+
+    // Send confirmation email to the user
     await sendEmail({
       to: email,
       subject: 'Eco-Park Visit Confirmation',
@@ -44,5 +50,34 @@ export const BookingModel = {
       available: result.rows[0].total_visitors < maxCapacity,
       remainingSpots: maxCapacity - result.rows[0].total_visitors
     };
+  },
+
+  async cancelBooking(bookingId, email) {
+    const query = `
+      DELETE FROM bookings
+      WHERE id = $1 AND email = $2
+      RETURNING *
+    `;
+    
+    const result = await pool.query(query, [bookingId, email]);
+    
+    if (result.rowCount === 0) {
+      throw new Error('No booking found with the provided ID and email.');
+    }
+
+    // Send cancellation email to the user
+    await sendEmail({
+      to: email,
+      subject: 'Eco-Park Booking Cancellation',
+      template: 'booking-cancellation',
+      context: { 
+        bookingId,
+        date: result.rows[0].date,
+        timeSlot: result.rows[0].time_slot,
+      }
+    });
+
+    return result.rows[0];
   }
 };
+
