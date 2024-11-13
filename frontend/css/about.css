@@ -1,0 +1,88 @@
+:root {
+    --primary: #7AB730;
+    --secondary: #f4faec;
+    --dark: #212121;
+    --light: #FFFFFF;
+    --font-family: "Poppins", sans-serif;
+}
+
+body {
+    font-family: var(--font-family);
+    margin: 0;
+    color: var(--dark);
+    background-color: #F3F3F3;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: var(--secondary);
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--primary);
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li {
+    margin-left: 15px;
+}
+
+.nav-links a {
+    color: var(--dark);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--primary);
+}
+
+.about-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    padding: 50px 20px;
+    background-color: var(--light);
+    color: var(--dark);
+}
+
+.about-section h2 {
+    color: var(--primary);
+    font-size: 2rem;
+}
+
+.about-section p {
+    font-size: 1.1rem;
+    line-height: 1.5;
+    margin: 20px 0;
+}
+
+.images {
+    display: flex;
+    gap: 15px;
+}
+
+.images img {
+    width: 250px;
+    height: auto;
+    border-radius: 5px;
+    background-color: #ddd;
+    object-fit: cover;
+}
+
+.footer {
+    text-align: center;
+    padding: 20px;
+    background-color: var(--dark);
+    color: var(--secondary);
+    font-size: 0.9rem;
+}
