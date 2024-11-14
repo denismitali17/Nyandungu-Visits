@@ -18,27 +18,27 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 // Routes
 app.get('/', (req, res) => {
-    res.render('index', { activePage: 'home' });
+    res.render('index', { activePage: 'home', pageTitle: 'Home' });
 });
 
 app.get('/booking', (req, res) => {
-    res.render('booking', { activePage: 'booking' });
+    res.render('booking', { activePage: 'booking', pageTitle: 'Booking' });
 });
 
 app.get('/signup', (req, res) => {
-    res.render('signup', { activePage: 'signup' });
+    res.render('signup', { activePage: 'signup', pageTitle: 'Sign Up' });
 });
 
 app.get('/service', (req, res) => {
-    res.render('service', { activePage: 'service' });
+    res.render('service', { activePage: 'service', pageTitle: 'Services' });
 });
 
 app.get('/contact', (req, res) => {
-    res.render('contact', { activePage: 'contact' });
+    res.render('contact', { activePage: 'contact', pageTitle: 'Contact' });
 });
 
 app.get('/package', (req, res) => {
-    res.render('package', { activePage: 'package' });
+    res.render('package', { activePage: 'package', pageTitle: 'Events' });
 });
 
 // Connect to SQLite database
@@ -59,11 +59,6 @@ const db = new sqlite3.Database('./nyandungu.db', (err) => {
       )
     `);
   }
-});
-
-// Route for homepage
-app.get('/', (req, res) => {
-  res.render('index');  // Render index.ejs instead of sending an HTML file
 });
 
 // Import booking routes

@@ -1,68 +1,156 @@
-    <!-- Topbar Start -->
-    <div class="container-fluid bg-light pt-3 d-none d-lg-block">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6 text-center text-lg-left mb-2 mb-lg-0">
-                    <div class="d-inline-flex align-items-center">
-                        <p><i class="fa fa-envelope mr-2"></i>nyandungu.ecopark@rdb.rw</p>
-                        <p class="text-body px-3">|</p>
-                        <p><i class="fa fa-phone-alt mr-2"></i>+250788840371</p>
-                    </div>
+<head>
+    <meta charset="utf-8">
+    <title><%= pageTitle %> | Nyandungu Visits</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+   
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet"> 
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+
+    <script src="js/main.js"></script>
+</head>
+<body>
+
+<style>
+    /* Default state of the toggle button (hamburger) */
+    .navbar-toggler-icon-manual {
+        width: 30px;
+        height: 30px;
+        position: relative;
+        display: flex;
+        top: 4px;
+    }
+
+    /* Create the three bars (rectangles) for the hamburger icon */
+    .navbar-toggler-icon-manual .bar {
+        position: absolute;
+        width: 30px;
+        height: 3px;
+        background-color: #414141;
+        border-radius: 7px;
+        transition: transform 0.3s ease;
+    }
+
+    /* First bar */
+    .navbar-toggler-icon-manual .bar1 {
+        top: 0;
+    }
+
+    /* Second bar */
+    .navbar-toggler-icon-manual .bar2 {
+        top: 10px;
+    }
+
+    /* Third bar */
+    .navbar-toggler-icon-manual .bar3 {
+        top: 20px;
+    }
+
+    /* State when the navbar is open (X icon) */
+    .navbar-toggler.open .bar1 {
+        transform: rotate(45deg);
+        top: 10px;
+    }
+
+    .navbar-toggler.open .bar2 {
+        opacity: 0;
+    }
+
+    .navbar-toggler.open .bar3 {
+        transform: rotate(-45deg);
+        top: 10px;
+    }
+</style>
+
+<!-- Topbar Start -->
+<div class="container-fluid bg-light pt-3 d-none d-lg-block">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 text-center text-lg-left mb-2 mb-lg-0">
+                <div class="d-inline-flex align-items-center">
+                    <p><i class="fa fa-envelope mr-2"></i>nyandungu.ecopark@rdb.rw</p>
+                    <p class="text-body px-3">|</p>
+                    <p><i class="fa fa-phone-alt mr-2"></i>+250788840371</p>
                 </div>
-                <div class="col-lg-6 text-center text-lg-right">
-                    <div class="d-inline-flex align-items-center">
-                        <a class="text-primary px-3" href="https://www.facebook.com/nyandungupark/" target="_blank">
-                            <i class="fab fa-facebook-f"></i>
-                        </a>
-                        
-                        </a> 
-                        <a class="text-primary px-3" href="https://x.com/nyandungupark" target="_blank">
-                          <i class="fab fa-twitter"></i>
-                      </a>
-                      
-                      
-                        </a>
-                        <a class="text-primary px-3" href="https://www.linkedin.com/company/nyandungu-eco-park/" target="_blank">
-                          <i class="fab fa-linkedin-in"></i>
-                      </a>
-                      
-                        </a>
-                        <a class="text-primary px-3" href="https://www.instagram.com/nyandungupark/" target="_blank">
-                          <i class="fab fa-instagram"></i>
-                      </a>
-                      
-                        </a>
-                        <a class="text-primary pl-3" href="https://www.youtube.com/@VisitRwanda" target="_blank">
-                          <i class="fab fa-youtube"></i>
-                      </a>
-                      
-                        </a>
-                    </div>
+            </div>
+            <div class="col-lg-6 text-center text-lg-right">
+                <div class="d-inline-flex align-items-center">
+                    <a class="text-primary px-3" href="https://www.facebook.com/nyandungupark/" target="_blank">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a class="text-primary px-3" href="https://x.com/nyandungupark" target="_blank">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a class="text-primary px-3" href="https://www.linkedin.com/company/nyandungu-eco-park/" target="_blank">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a class="text-primary px-3" href="https://www.instagram.com/nyandungupark/" target="_blank">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a class="text-primary pl-3" href="https://www.youtube.com/@VisitRwanda" target="_blank">
+                        <i class="fab fa-youtube"></i>
+                    </a>
                 </div>
             </div>
         </div>
     </div>
-    <!-- Topbar End -->
+</div>
+<!-- Topbar End -->
 
-
-    <!-- Navbar Start -->
-    <div class="container-fluid position-relative nav-bar p-0">
-        <div class="container-lg position-relative p-0 px-lg-3" style="z-index: 9;">
-            <nav class="navbar navbar-expand-lg bg-light navbar-light shadow-lg py-3 py-lg-0 pl-3 pl-lg-5">
-                <a href="" class="navbar-brand">
-                    <h1 class="m-0 text-primary"><span class="text-dark">NYANDUNGU</span>VISITS</h1>
-                </a>
-                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+<!-- Navbar Start -->
+<div class="container-fluid position-relative nav-bar p-0">
+    <div class="container-lg position-relative p-0 px-lg-3" style="z-index: 9;">
+        <nav class="navbar navbar-expand-lg bg-light navbar-light shadow-lg py-3 py-lg-0 pl-3 pl-lg-5">
+            <a href="" class="navbar-brand">
+                <h1 class="m-0 text-primary"><span class="text-dark">NYANDUNGU</span>VISITS</h1>
+            </a>
+            <!-- Navbar toggle button -->
+            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                <span class="navbar-toggler-icon-manual">
+                    <span class="bar bar1"></span>
+                    <span class="bar bar2"></span>
+                    <span class="bar bar3"></span>
+                </span>
+            </button>
+            <!-- Navbar links wrapped in collapse div -->
+            <div class="collapse navbar-collapse" id="navbarCollapse">
                 <div class="navbar-nav ml-auto py-0">
                     <a href="/" class="nav-item nav-link <%= activePage === 'home' ? 'active' : '' %>">Home</a>
                     <a href="/service" class="nav-item nav-link <%= activePage === 'service' ? 'active' : '' %>">Services</a>
                     <a href="/package" class="nav-item nav-link <%= activePage === 'package' ? 'active' : '' %>">Events</a>
                     <a href="/contact" class="nav-item nav-link <%= activePage === 'contact' ? 'active' : '' %>">Contact</a>
-                    <a href="/booking" class="nav-item nav-link <%= activePage === 'booking' ? 'active' : '' %>">Sign Up</a>
-                </div>                
-            </nav>
-        </div>
+                    <a href="/signup" class="nav-item nav-link <%= activePage === 'signup' ? 'active' : '' %>">Sign Up</a>
+                </div>
+            </div>                
+        </nav>
     </div>
-    <!-- Navbar End -->
+</div>
+<!-- Navbar End -->
+<script>
+    // JavaScript to toggle 'close' (X) icon
+    document.addEventListener('DOMContentLoaded', function () {
+        const navbarToggle = document.querySelector('.navbar-toggler');
+        
+        navbarToggle.addEventListener('click', function () {
+            // Toggle 'open' class on the toggle button
+            navbarToggle.classList.toggle('open');
+        });
+    });
+</script>
