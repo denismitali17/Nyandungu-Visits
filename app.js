@@ -6,12 +6,32 @@ const path = require('path');
 const app = express();
 const PORT = 3000;
 
-// Route for homepage
+// Set EJS as the templating engine
+app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, 'views'));
+
+// Serve static files from the public directory
 app.use(express.static(path.join(__dirname, 'public')));
 
 // Use bodyParser to parse form data
 app.use(bodyParser.urlencoded({ extended: true }));
 
+// Routes
+app.get('/booking', (req, res) => {
+    res.render('booking');  // Renders booking.ejs
+});
+app.get('/signup', (req, res) => {
+    res.render('signup');  // Renders signup.ejs
+});
+app.get('/service', (req, res) => {
+    res.render('service');  // Renders service.ejs
+});
+app.get('/contact', (req, res) => {
+    res.render('contact');  // Renders contact.ejs
+});
+app.get('/package', (req, res) => {
+    res.render('package');  // Renders package.ejs
+});
 // Connect to SQLite database
 const db = new sqlite3.Database('./nyandungu.db', (err) => {
   if (err) {
@@ -34,7 +54,7 @@ const db = new sqlite3.Database('./nyandungu.db', (err) => {
 
 // Route for homepage
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'index.html'));
+  res.render('index');  // Render index.ejs instead of sending an HTML file
 });
 
 // Import booking routes

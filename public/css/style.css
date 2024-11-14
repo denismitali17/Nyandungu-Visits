@@ -4361,7 +4361,29 @@
   .card {
     width: 100%;
   }
-  
+@media screen and (min-width: 1000px) {
+  .card {
+    flex: 1 0 0%;
+    margin-right: 15px;
+    margin-bottom: 0;
+  }
+  .row-card {
+    flex-wrap: nowrap;
+  }
+}
+  @media screen and(max-width: 1000px) {
+    .base-rubber {
+      padding-right: 30px;
+      padding-left: 30px;
+    }
+  }
+  .container-lg-copyright{
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: 0;
+    margin-left: auto;
+}
   .card > hr {
     margin-right: 0;
     margin-left: 0;
