@@ -1,10 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Admin - Bookings</title>
-</head>
-<body>
+    <%- include('../partials/navigation.ejs') %>
     <h2>Bookings</h2>
     <a href="/admin/logout">Logout</a>
     <table border="1">
@@ -31,5 +27,6 @@
             <% }) %>
         </tbody>
     </table>
-</body>
+    <%- include('../partials/footer.ejs') %>
+
 </html>

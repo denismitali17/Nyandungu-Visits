@@ -36,7 +36,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 // Admin login route
 app.get('/admin/login', (req, res) => {
-    res.render('admin/login', { error: null });
+    res.render('admin/login', { error: null, pageTitle: 'Admin Login', activePage: 'admin-login' });
 });
 
 app.post('/admin/login', (req, res) => {
@@ -45,7 +45,7 @@ app.post('/admin/login', (req, res) => {
         req.session.isAuthenticated = true;
         res.redirect('/admin/dashboard');
     } else {
-        res.render('admin/login', { error: 'Invalid credentials' });
+        res.render('admin/login', { error: 'Invalid credentials', pageTitle: 'Admin Login', activePage: 'admin-login' });
     }
 });
 
@@ -55,7 +55,7 @@ app.get('/admin/logout', (req, res) => {
     res.redirect('/admin/login');
 });
 
-// Route to display admin dashboard with bookings (authentication check included)
+// Admin dashboard route
 app.get('/admin/dashboard', (req, res) => {
     if (!req.isAuthenticated) {
         return res.redirect('/admin/login');
@@ -66,7 +66,7 @@ app.get('/admin/dashboard', (req, res) => {
             console.error('Error fetching bookings:', err.message);
             res.status(500).send("Error fetching bookings");
         } else {
-            res.render('admin/dashboard', { bookings: rows });
+            res.render('admin/dashboard', { bookings: rows, pageTitle: 'Admin Dashboard', activePage: 'admin-dashboard' });
         }
     });
 });

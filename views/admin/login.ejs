@@ -1,9 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Login</title>
-</head>
+    <%- include('../partials/navigation.ejs') %>
 <body>
     <h2>Login</h2>
     <% if (error) { %><p style="color: red;"><%= error %></p><% } %>
@@ -12,6 +9,6 @@
         <input type="password" name="password" placeholder="Password" required>
         <button type="submit">Login</button>
     </form>
-    
-</body>
+
+    <%- include('../partials/footer.ejs') %>
 </html>
