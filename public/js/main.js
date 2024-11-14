@@ -66,10 +66,36 @@
   });
 })(jQuery);
 
-$(document).ready(function () {
-  $("visit-date").datepicker({
-    dateFormat: "mm/dd/yy",
-    minDate: 0, // Disallow past dates
-    maxDate: "+1Y", // Limit to 1 year in advance
+// public/js/main.js
+$(document).ready(function() {
+  $('.booking-form').on('submit', function(e) {
+      e.preventDefault();
+
+      // Gather form data
+      const bookingData = {
+          name: $('#name').val(),
+          email: $('#email').val(),
+          visitDate: $('#visit-date').val(),
+          ticketType: $('#ticket-type').val(),
+          timeSlot: $('.custom-select').val()
+      };
+
+      // Send data to server via AJAX
+      $.ajax({
+          url: '/booking/submit',
+          type: 'POST',
+          data: bookingData,
+          success: function(response) {
+              alert(response);
+          },
+          error: function(error) {
+              alert("There was an error with your booking.");
+          }
+      });
+  });
+
+  // Initialize date picker
+  $('#visit-date').datepicker({
+      dateFormat: 'yy-mm-dd'
   });
 });
