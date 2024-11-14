@@ -4359,12 +4359,7 @@
   }
   
   .card {
-    width: 42%;
-    left: 476px;
-    margin-left: 289px;
-    margin-right: 34px;
-    bottom: 410px;
-    position: relative;
+    width: 100%;
   }
   
   .card > hr {
