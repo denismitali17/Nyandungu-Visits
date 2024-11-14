@@ -17,21 +17,30 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(bodyParser.urlencoded({ extended: true }));
 
 // Routes
+app.get('/', (req, res) => {
+    res.render('index', { activePage: 'home' });
+});
+
 app.get('/booking', (req, res) => {
-    res.render('booking');  // Renders booking.ejs
+    res.render('booking', { activePage: 'booking' });
 });
+
 app.get('/signup', (req, res) => {
-    res.render('signup');  // Renders signup.ejs
+    res.render('signup', { activePage: 'signup' });
 });
+
 app.get('/service', (req, res) => {
-    res.render('service');  // Renders service.ejs
+    res.render('service', { activePage: 'service' });
 });
+
 app.get('/contact', (req, res) => {
-    res.render('contact');  // Renders contact.ejs
+    res.render('contact', { activePage: 'contact' });
 });
+
 app.get('/package', (req, res) => {
-    res.render('package');  // Renders package.ejs
+    res.render('package', { activePage: 'package' });
 });
+
 // Connect to SQLite database
 const db = new sqlite3.Database('./nyandungu.db', (err) => {
   if (err) {

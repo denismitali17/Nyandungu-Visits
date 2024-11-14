@@ -55,15 +55,13 @@
                 <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="collapse navbar-collapse justify-content-between px-3" id="navbarCollapse">
-                    <div class="navbar-nav ml-auto py-0">
-                        <a href="/" class="nav-item nav-link active">Home</a>
-                        <a href="/service" class="nav-item nav-link">Services</a>
-                        <a href="/package" class="nav-item nav-link">Events</a>
-                        <a href="/contact" class="nav-item nav-link">Contact</a>
-                        <a href="/signup" class="nav-item nav-link">Sign Up</a>
-                    </div>
-                </div>
+                <div class="navbar-nav ml-auto py-0">
+                    <a href="/" class="nav-item nav-link <%= activePage === 'home' ? 'active' : '' %>">Home</a>
+                    <a href="/service" class="nav-item nav-link <%= activePage === 'service' ? 'active' : '' %>">Services</a>
+                    <a href="/package" class="nav-item nav-link <%= activePage === 'package' ? 'active' : '' %>">Events</a>
+                    <a href="/contact" class="nav-item nav-link <%= activePage === 'contact' ? 'active' : '' %>">Contact</a>
+                    <a href="/booking" class="nav-item nav-link <%= activePage === 'booking' ? 'active' : '' %>">Sign Up</a>
+                </div>                
             </nav>
         </div>
     </div>
