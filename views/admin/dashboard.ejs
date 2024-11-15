@@ -2,8 +2,8 @@
 <html lang="en">
   <body style="background: black;">
     <%- include('../partials/navigation.ejs') %>
-    <h2 class="row justify-content-center my-5 " style="color: grey;">Bookings</h2>
-    <div class="container my-5" >
+    <h2 class="row justify-content-center my-5" style="color: grey;">Bookings</h2>
+    <div class="container my-5">
       <table border="1">
         <thead>
           <tr>
@@ -28,9 +28,29 @@
           <% }) %>
         </tbody>
       </table>
-      <br>
-    <a href="/admin/logout">Logout</a>
 
+      <h2 class="row justify-content-center my-5" style="color: grey;">Users</h2>
+      <table border="1">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% users.forEach(user => { %>
+          <tr>
+            <td><%= user.id %></td>
+            <td><%= user.name %></td>
+            <td><%= user.email %></td>
+          </tr>
+          <% }) %>
+        </tbody>
+      </table>
+
+      <br>
+      <a href="/admin/logout">Logout</a>
     </div>
 
     <%- include('../partials/footer.ejs') %>

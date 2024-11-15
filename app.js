@@ -100,19 +100,32 @@ app.get('/admin/logout', (req, res) => {
     res.redirect('/admin/login');
 });
 
-// Admin dashboard route
 app.get('/admin/dashboard', (req, res) => {
     if (!req.isAuthenticated) {
         return res.redirect('/admin/login');
     }
 
-    db.all("SELECT * FROM bookings", (err, rows) => {
+    // Fetch both bookings and users from the database
+    db.all("SELECT * FROM bookings", (err, bookings) => {
         if (err) {
             console.error('Error fetching bookings:', err.message);
-            res.status(500).send("Error fetching bookings");
-        } else {
-            res.render('admin/dashboard', { bookings: rows, pageTitle: 'Admin Dashboard', activePage: 'admin-dashboard' });
+            return res.status(500).send("Error fetching bookings");
         }
+
+        db.all("SELECT * FROM users", (err, users) => {
+            if (err) {
+                console.error('Error fetching users:', err.message);
+                return res.status(500).send("Error fetching users");
+            }
+
+            // Render the dashboard with both bookings and users
+            res.render('admin/dashboard', { 
+                bookings: bookings, 
+                users: users, 
+                pageTitle: 'Admin Dashboard', 
+                activePage: 'admin-dashboard' 
+            });
+        });
     });
 });
 
