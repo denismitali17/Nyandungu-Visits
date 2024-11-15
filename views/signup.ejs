@@ -21,18 +21,26 @@
                         <h1 class="text-black m-0">Sign Up Now</h1>
                     </div>
                     <div class="card-body rounded-bottom bg-white p-5">
-                        <form>
+                        <form action="/signup" method="POST">
                             <div class="form-group">
-                                <input type="text" class="form-control p-4" placeholder="Your name" required="required" />
+                                <input type="text" name="name" class="form-control p-4" placeholder="Your name" required="required" />
                             </div>
                             <div class="form-group">
-                                <input type="email" class="form-control p-4" placeholder="Your email" required="required" />
+                                <input type="email" name="email" class="form-control p-4" placeholder="Your email" required="required" />
                             </div>
-
                             <div>
                                 <button class="btn btn-primary btn-block py-3" type="submit">Sign Up Now</button>
                             </div>
                         </form>
+                        
+                        <!-- Display error or success message -->
+                        <% if (error) { %>
+                            <p style="color: red;"><%= error %></p>
+                        <% } %>
+                        <% if (success) { %>
+                            <p style="color: green;"><%= success %></p>
+                        <% } %>
+                        
                     </div>
                 </div>
             </div>
