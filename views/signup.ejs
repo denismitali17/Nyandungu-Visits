@@ -1,47 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<%- include('partials/navigation.ejs') %>
-    <!-- Registration Start -->
-    <div class="container-fluid bg-dark text-white-50 py-5 px-sm-3 px-lg-5" style="margin-top: 90px; display: flex;">
+  <%- include('partials/navigation.ejs') %>
+  <!-- Registration Start -->
+  <div
+    class="container-fluid bg-dark text-white-50 py-5 px-sm-3 px-lg-5"
+    style="margin-top: 90px; display: flex"
+  >
     <div class="container py-5">
-        <div class="row row-card align-items-center">
-            <div class="col-lg-7 mb-5 mb-lg-0">
-                <div class="mb-4">
-                    <h6 class="text-primary text-uppercase" style="letter-spacing: 5px;">Mega Offer</h6>
-                    <h1 class="text-white"><span class="text-primary">Discount</span> For Students with Student cards</h1>
-                </div>
-                <p class="text-white">Nyandungu Eco-Park reduced entrance fees for students to encourage educational visits and promote environmental awareness. This initiative helps students connect with nature, fostering sustainability values while making the park more accessible to younger generations.</p>
-                
-           
-            </div>
-            <div class="col-lg-5">
-                <div class="card border-0">
-                    <div class="card-header bg-primary text-center p-4">
-                        <h1 class="text-black m-0">Sign Up Now</h1>
-                    </div>
-                    <div class="card-body rounded-bottom bg-white p-5">
-                        <form>
-                            <div class="form-group">
-                                <input type="text" class="form-control p-4" placeholder="Your name" required="required" />
-                            </div>
-                            <div class="form-group">
-                                <input type="email" class="form-control p-4" placeholder="Your email" required="required" />
-                            </div>
-
-                            <div>
-                                <button class="btn btn-primary btn-block py-3" type="submit">Sign Up Now</button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
+      <div class="row row-card align-items-center">
+        <div class="col-lg-7 mb-5 mb-lg-0">
+          <div class="mb-4">
+            <h6 class="text-primary text-uppercase" style="letter-spacing: 5px">
+              Mega Offer
+            </h6>
+            <h1 class="text-white">
+              <span class="text-primary">Discount</span> For Students with
+              Student cards
+            </h1>
+          </div>
+          <p class="text-white">
+            Nyandungu Eco-Park reduced entrance fees for students to encourage
+            educational visits and promote environmental awareness. This
+            initiative helps students connect with nature, fostering
+            sustainability values while making the park more accessible to
+            younger generations.
+          </p>
         </div>
-    </div>
-</div>
- <!-- Registration End -->
+        <div class="col-lg-5">
+          <div class="card border-0">
+            <div class="card-header bg-primary text-center p-4">
+              <h1 class="text-black m-0">Sign Up Now</h1>
+            </div>
+            <div class="card-body rounded-bottom bg-white p-5">
+              <form>
+                <div class="form-group">
+                  <input
+                    type="text"
+                    class="form-control p-4"
+                    placeholder="Your name"
+                    required="required"
+                  />
+                </div>
+                <div class="form-group">
+                  <input
+                    type="email"
+                    class="form-control p-4"
+                    placeholder="Your email"
+                    required="required"
+                  />
+                </div>
 
-     <!-- Footer Start -->
-     <%- include('partials/footer') %>
-    <!-- Footer End -->
-  </html>
+                <div>
+                  <button class="btn btn-primary btn-block py-3" type="submit">
+                    Sign Up Now
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Registration End -->
+
+  <!-- Footer Start -->
+  <%- include('partials/footer') %>
+  <!-- Footer End -->
+</html>
