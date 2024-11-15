@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
     <%- include('../partials/navigation.ejs') %>
-<body>
-    <h2>Login</h2>
+<body style="background: black;">
+    <h2 class="row justify-content-center my-5" style="color: grey;">Admin Login</h2>
+    <div class=" row justify-content-center">
     <% if (error) { %><p style="color: red;"><%= error %></p><% } %>
     <form action="/admin/login" method="POST">
         <input type="text" name="username" placeholder="Username" required>
         <input type="password" name="password" placeholder="Password" required>
         <button type="submit">Login</button>
     </form>
-
+    </div>
     <%- include('../partials/footer.ejs') %>
 </html>
