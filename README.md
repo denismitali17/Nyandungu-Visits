@@ -46,7 +46,7 @@ Nyandungu Visits is the official website for Nyandungu Eco-Park, Rwanda’s firs
 ### **7. Security Features**
 - **Multi-Factor Authentication (MFA)**: Adds an extra layer of protection to admin login.
 - **Middleware Security**: Protection against common vulnerabilities like XSS, CSRF, and brute-force attacks.
-- **Rate Limiting**: Restricts excessive requests to safeguard against potential DDoS attacks.
+- **Rate Limiting**: Restricts excessive requests to safeguard against potential DDoS attacks. 
 
 ---
 
