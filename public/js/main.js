@@ -68,35 +68,49 @@
 })(jQuery);
 
 // public/js/main.js
-$(document).ready(function() {
-  $('.booking-form').on('submit', function(e) {
-      e.preventDefault();
+$(document).ready(function () {
+  $(".booking-form").on("submit", function (e) {
+    e.preventDefault();
 
-      // Gather form data
-      const bookingData = {
-          name: $('#name').val(),
-          email: $('#email').val(),
-          visitDate: $('#visit-date').val(),
-          ticketType: $('#ticket-type').val(),
-          timeSlot: $('.custom-select').val()
-      };
+    // Gather form data
+    const bookingData = {
+      name: $("#name").val(),
+      email: $("#email").val(),
+      visitDate: $("#visit-date").val(),
+      ticketType: $("#ticket-type").val(),
+      timeSlot: $("#time-slot").val(),
+    };
 
-      // Send data to server via AJAX
-      $.ajax({
-          url: '/booking/submit',
-          type: 'POST',
-          data: bookingData,
-          success: function(response) {
-              alert(response);
-          },
-          error: function(error) {
-              alert("There was an error with your booking.");
-          }
-      });
+    // Send data to server via AJAX
+    $.ajax({
+      url: "/booking/submit",
+      type: "POST",
+      data: bookingData,
+      success: function (response) {
+        // Set the response message in the modal
+        $("#responseModal .modal-body").text(response);
+
+        // Show the modal
+        $("#responseModal").modal("show");
+
+        // Clear the form fields after a short delay
+        $("#responseModal").on("hidden.bs.modal", function () {
+          $(".booking-form")[0].reset(); // Resets the form fields
+        });
+      },
+      error: function (error) {
+        // Set the error message in the modal
+        $("#responseModal .modal-body").text("There was an error with your booking. Please try again.");
+
+        // Show the modal
+        $("#responseModal").modal("show");
+      },
+    });
   });
 
   // Initialize date picker
-  $('#visit-date').datepicker({
-      dateFormat: 'yy-mm-dd'
+  $("#visit-date").datepicker({
+    dateFormat: "yy-mm-dd",
   });
 });
+

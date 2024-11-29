@@ -33,7 +33,6 @@
 
       <div class="form-group">
         <div class="mb-3 mb-md-0">
-          <div class="date" id="date2" data-target-input="nearest"></div>
           <label for="visit-date">Visit Date</label>
           <input
             type="text"
@@ -56,8 +55,9 @@
 
       <div class="form-group">
         <div class="mb-3 mb-md-0">
-          <select class="custom-select px-4" style="height: 47px">
-            <option selected>Time Slots</option>
+          <label for="time-slot">Time Slot</label>
+          <select id="time-slot" class="custom-select px-4" style="height: 47px">
+            <option selected disabled>Select a time slot</option>
             <option value="1">9AM-12PM</option>
             <option value="2">12PM-3PM</option>
             <option value="3">3PM-6PM</option>
@@ -69,6 +69,24 @@
         Book Now
       </button>
     </form>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="responseModal" tabindex="-1" role="dialog" aria-labelledby="responseModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="responseModalLabel">Status</h5>
+          <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
+        </div>
+        <div class="modal-body">
+          <!-- Response message will be dynamically inserted here -->
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
   </div>
 
   <%- include('partials/footer.ejs') %>
